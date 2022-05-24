@@ -1,0 +1,20 @@
+{
+    "type": "postgres",
+    "url": "postgres://iboxsbov:hAj6ogWV2-4J3OTqp_q1u0eeEIO7WIDo@tyke.db.elephantsql.com/iboxsbov",
+    "port": 5432,
+    "username": "iboxsbov",
+    "password": "hAj6ogWV2-4J3OTqp_q1u0eeEIO7WIDo",
+    "database": "iboxsbov",
+    "synchronize": true,
+    "logging": true,
+    "entities": [
+        "dist/**/entities/*{.ts,.js}"
+    ],
+    "subscribers": [],
+    "migrations": [
+        "src/migrations/*{.ts,.js}"
+    ],
+    "cli": {
+        "migrationsDir": "src/migrations"
+    }
+}
