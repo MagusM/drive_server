@@ -1,17 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { Query, Resolver } from '@nestjs/graphql';
 
-@Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
-  }
-}
-
 @Resolver()
 export class AppResolver {
   @Query(() => String)
   sayHello(): string {
-    return 'Hello World!';
+    return 'Hello World! from app resolver';
+  }
+}
+@Injectable()
+export class AppService {
+  constructor(private appResolver: AppResolver) {}
+
+  getHello(): string {
+    return this.appResolver.sayHello();
   }
 }
